@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  ["About", "/about"], ["Services", "/#services"], ["Industries", "/#industries"], ["Portfolio", "/portfolio"],
+  ["Home", "/"], ["About", "/about"], ["Services", "/#services"], ["Industries", "/#industries"], ["Portfolio", "/portfolio"],
   ["Packages", "/#packages"], ["Process", "/#process"], ["Insights", "/#insights"],
 ];
 
@@ -33,7 +33,7 @@ export default function Header() {
           <motion.nav aria-label="Mobile" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden bg-navy-950 md:hidden">
             <div className="flex flex-col gap-1 px-5 pb-5">
-              {links.map(([l, h]) => (<a key={h} href={h} onClick={() => setOpen(false)} className="py-3 text-white/85">{l}</a>))}
+              {links.map(([l, h]) => (<a key={h} href={h} onClick={() => setOpen(false)} className="border-b border-white/[0.06] py-3 text-center text-white/70 transition-colors hover:bg-white/5 hover:text-volt focus-visible:bg-white/5 focus-visible:text-volt">{l}</a>))}
               <a href="/#contact" onClick={() => setOpen(false)} className="mt-2 rounded-sm bg-volt py-3 text-center font-bold text-navy-950">Let&apos;s Talk</a>
             </div>
           </motion.nav>
